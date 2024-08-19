@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <title>Image Ranker</title>
+</head>
+<body>
+    <div id="container" class="container">
+        <div class="flexColumn1">
+            <div class="inputColumn">
+                <h1>Image Ranker</h1>
+
+                <h3>1. Choose images to rank</h3>
+                <h6>( Accepts most image types like: PNG, JPG, GIF, WEBP )</h6>
+                <h6>( total size limit is 100MB )</h6>
+                <input type="file" id="upload" multiple accept="image/*">
+
+                <h3>2. Click to preview images</h3>
+                <button onclick="previewImages()">Preview Images</button>
+                
+                <h3>3. Change ratings of the images</h3>
+
+                <h3>4. Click to reorder images</h3>
+                <button onclick="reorderImages()">Reorder Images</button>
+
+                <h3>5. Edit image names</h3>
+                <h6>( optional )</h6>
+                <div class="button-group">
+                    <button class="editBtn" onclick="autoNumberNames()">Auto Number</button>
+                    <button class="editBtn" onclick="useRankingNames()">Use Rankings</button>
+                </div>
+                
+                <h3>6. Enter album folder name</h3>
+                <h6>( you will use this when saving the images )</h6>
+                <input type="text" id="albumName" class="folder-name" placeholder="Album Folder Name">
+
+                <h3>7. Click to update image names</h3>
+                <button onclick="updateImages()">Update Images</button>
+
+                <h3>8. Click to save images</h3>
+                <h6>( this will generate a zip folder to save as )</h6>
+                <button onclick="saveImages()">Save Images</button>
+
+                <div>
+                    <progress id="progressBar" value="0" max="100" class="progress"></progress>
+                    <h6>( please wait a few seconds to minutes for processing )</h6>
+                </div>
+            </div>
+        </div>
+        <div class="flexColumn2">
+            <div class="previewColumn" id="previewColumn">
+                <!-- Image previews and sliders will be inserted here by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
